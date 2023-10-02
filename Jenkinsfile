@@ -2,7 +2,7 @@ pipeline {
     agent any
     options {
         // Timeout counter starts AFTER agent is allocated
-        timeout(time: 1, unit: 'SECONDS')
+        buildDiscarder(logRotator(numToKeepStr: '5'))
     }
     stages {
         stage('Scan') {
