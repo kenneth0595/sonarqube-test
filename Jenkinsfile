@@ -2,14 +2,12 @@ pipeline {
     agent any
     options {
         // Timeout counter starts AFTER agent is allocated
-        buildDiscarder(logRotator(numToKeepStr: '5'))
+        timeout(time: 1, unit: 'SECONDS')
     }
     stages {
-        stage('Scan') {
+        stage('Example') {
             steps {
-                withSonarQubeEnv(installationName: 'sonarqube') {
-                    sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.4:sonar'
-                }
+                echo 'Hello World'
             }
         }
     }
