@@ -3,8 +3,8 @@ pipeline {
        stages{
            stage('SCM') {
                steps {
-                   git branch: "dev",
-                   url: "https://github.com/foo/bar.git"
+                   git branch: "main",
+                   url: "https://github.com/kenneth0595/fastcampus-jenkins.git"
                }
            }
         
